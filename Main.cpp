@@ -289,7 +289,7 @@ int main(int argc,char* argv[]){
 									opcionm_agregarcaso=MenuAgregarCaso();
 								}
 							}else{
-								cout<<"No Hay Invesitgadores o no hay evidencias"
+								cout<<"No Hay Invesitgadores o no hay evidencias";
 							}
 							break;
 						}//fin agregar caso
@@ -421,9 +421,8 @@ int main(int argc,char* argv[]){
 		}//finn switch Menu Principal
 		int opcionm_principal=MenuPrincipal();
 	}//fin while Menu Principal
+	
 	//Deletes
-
-
 	for (int i = 0; i < personas.size(); ++i)
 	{
 		delete personas[i];
@@ -438,6 +437,8 @@ int main(int argc,char* argv[]){
 	}
 	return 0;
 }
+}
+
 int Menu Principal(){
 	int opcion;
 	cout<<"Menu Principal\n1. Gestion Persona\n2. Gestion Casos\n3. Gestion Evidencia\n4. Log in\n5. Salir\nElija una Opcion: ";
@@ -478,7 +479,8 @@ int MenuGestionEvidencia(){//Menu Principal
 	}
 	return opcion;
 }//fin menu principal
-int MenuAgregarPersona(){//Menu Principal
+
+int MenuAgregarPersona(){//Menu Agregar persona
 	int opcion;
 	cout<<"Menu Agregar Persona\n1. Agregar Personal Administrativo\n2. Agregar Investigador\n3. Agregar Forense\n4. Salir\nElija una Opcion: ";
 	cin>>opcion;
@@ -488,7 +490,8 @@ int MenuAgregarPersona(){//Menu Principal
 	}
 	return opcion;
 }//fin menu principal
-int MenuAgregarCaso(){//Menu Principal
+
+int MenuAgregarCaso(){//Menu Caso
 	int opcion;
 	cout<<"Menu Agregar Caso\n1. Agregar Homicidio\n2. Agregar Secuestro\n3. Salir\nElija una Opcion: ";
 	cin>>opcion;
@@ -497,7 +500,8 @@ int MenuAgregarCaso(){//Menu Principal
 		cin>>opcion;
 	}
 	return opcion;
-}//fin menu principal
+}//fin menu Caso
+
 //Menus de cada usuario
 int MenuAdmin(){
 	int opcion;

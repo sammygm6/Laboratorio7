@@ -7,7 +7,7 @@ using std::string;
 
 class Evidencia{
 
-	int tipo
+	int tipo;
 	string nombre,lugar;
 	bool huella,procesada;
 public:
