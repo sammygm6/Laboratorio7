@@ -13,7 +13,7 @@ Sospechoso::Sospechoso(const Sospechoso& other):Sospechoso(other){
 
 }
 Sospechoso::~Sospechoso(){
-	delete Sospechoso;
+	delete this;
 }
 string Sospechoso::toString()const{
 	stringstream ss;

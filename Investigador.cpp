@@ -17,7 +17,7 @@ casos_cerrados(other.casos_cerrados), casos_sin_resolver(other.casos_sin_resolve
 
 }
 Investigador::~Investigador(){
-	delete Investigador;
+	delete this;
 }
 string Investigador::toString(){
 	stringstream ss;

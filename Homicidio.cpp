@@ -17,7 +17,7 @@ string Homicidio::toString()const{
 	return ss.str();
 }
 vector<Sospechoso> Homicidio::getSospechosos()const{
-	return sospechosos;
+	return this;
 }
 Sospechoso Homicidio::getSospechoso(int i)const{
 	return sospechosos.at(i);
