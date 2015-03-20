@@ -32,7 +32,7 @@ int main(int argc,char* argv[]){
 				int opcionm_agregarpersona=MenuAgregarPersona();//Opcion Menu Agregar Persona
 				string nombrereal,nombreusuario,password,cedula,fechanacimiento; 
 				int edad;
-				bool yaExiste=false;
+				bool yaexiste=false;
 				switch(opcionm_agregarpersona)
 				{//switch Menu Agregar Persona 
 					case 1:
@@ -43,14 +43,14 @@ int main(int argc,char* argv[]){
 						cout<<"Ingrese su numero de cedula: ";
 						cin>>cedula;
 						cout<<"Ingrese su fecha de nacimiento (Dia/Mes/Año): ";
-						cin>>fechanacimiento
+						cin>>fechanacimiento;
 						cout<<"Ingrese su edad: ";
 						cin>>edad;
 						cout<<"Ingrese un nombre de Usuario: ";
 						cin>>nombreusuario;
 						for (int i = 0; i < personas.size(); ++i)
 						{
-							if (personas[i].getNombreUsuario()==nombreusuario)
+							if (personas[i]->getNombreUsuario()==nombreusuario)
 							{
 								yaexiste=true;
 								break;
@@ -62,7 +62,7 @@ int main(int argc,char* argv[]){
 							cin>>nombreusuario;
 							for (int i = 0; i < personas.size(); ++i)
 							{
-								if (personas[i].getNombreUsuario()==nombreusuario)
+								if (personas[i]->getNombreUsuario()==nombreusuario)
 								{
 									contadorentradaif++;
 									yaexiste=true;
@@ -79,7 +79,8 @@ int main(int argc,char* argv[]){
 						cin>>puesto;
 						cout<<"Ingrese su clave de ingreso (memoricela): ";
 						cin>>clave;
-						personas.push_back(nombrereal,nombreusuario,password,edad,cedula,fechanacimiento,clave,puesto);
+						Administrativo* admin=new Administrativo(nombrereal,nombreusuario,password,edad,cedula,fechanacimiento,clave,puesto);
+						personas.push_back(admin);
 						break;
 					}//fin case Agregar Peronal Administrativo 
 					case 2:
@@ -89,14 +90,14 @@ int main(int argc,char* argv[]){
 						cout<<"Ingrese su numero de cedula: ";
 						cin>>cedula;
 						cout<<"Ingrese su fecha de nacimiento (Dia/Mes/Año): ";
-						cin>>fechanacimiento
+						cin>>fechanacimiento;
 						cout<<"Ingrese su edad: ";
 						cin>>edad;
 						cout<<"Ingrese un nombre de Usuario: ";
 						cin>>nombreusuario;
 						for (int i = 0; i < personas.size(); ++i)
 						{
-							if (personas[i].getNombreUsuario()==nombreusuario)
+							if (personas[i]->getNombreUsuario()==nombreusuario)
 							{
 								yaexiste=true;
 								break;
@@ -108,7 +109,7 @@ int main(int argc,char* argv[]){
 							cin>>nombreusuario;
 							for (int i = 0; i < personas.size(); ++i)
 							{
-								if (personas[i].getNombreUsuario()==nombreusuario)
+								if (personas[i]->getNombreUsuario()==nombreusuario)
 								{
 									contadorentradaif++;
 									yaexiste=true;
@@ -121,7 +122,8 @@ int main(int argc,char* argv[]){
 						}
 						cout<<"Ingrese Una contraseña (memoricela): ";
 						cin>>password;
-						personas.push_back(nombrereal,nombreusuario,password,edad,cedula,fechanacimiento);
+						Investigador* investigador=new Investigador(nombrereal,nombreusuario,password,edad,cedula,fechanacimiento);
+						personas.push_back(investigador);
 						break;
 					}//fin case Agregar Investigador 
 					case 3:
@@ -132,14 +134,14 @@ int main(int argc,char* argv[]){
 						cout<<"Ingrese su numero de cedula: ";
 						cin>>cedula;
 						cout<<"Ingrese su fecha de nacimiento (Dia/Mes/Año): ";
-						cin>>fechanacimiento
+						cin>>fechanacimiento;
 						cout<<"Ingrese su edad: ";
 						cin>>edad;
 						cout<<"Ingrese un nombre de Usuario: ";
 						cin>>nombreusuario;
 						for (int i = 0; i < personas.size(); ++i)
 						{
-							if (personas[i].getNombreUsuario()==nombreusuario)
+							if (personas[i]->getNombreUsuario()==nombreusuario)
 							{
 								yaexiste=true;
 								break;
@@ -151,7 +153,7 @@ int main(int argc,char* argv[]){
 							cin>>nombreusuario;
 							for (int i = 0; i < personas.size(); ++i)
 							{
-								if (personas[i].getNombreUsuario()==nombreusuario)
+								if (personas[i]->getNombreUsuario()==nombreusuario)
 								{
 									contadorentradaif++;
 									yaexiste=true;
@@ -164,11 +166,12 @@ int main(int argc,char* argv[]){
 						}
 						cout<<"Ingrese Una contraseña (memoricela): ";
 						cin>>password;
-						cout<<"Ingrese su puesto: ";
-						cin>>puesto;
-						cout<<"Ingrese su clave de ingreso (memoricela): ";
-						cin>>clave;
-						personas.push_back(nombrereal,nombreusuario,password,edad,cedula,fechanacimiento,clave,puesto);
+						cout<<"Ingrese su fecha de ingreso: ";
+						cin>>fecha_de_ingreso;
+						cout<<"Ingrese su Horario: ";
+						cin>>horario;
+						Forense* forense=new Forense(nombrereal,nombreusuario,password,edad,cedula,fechanacimiento,fecha_de_ingreso,horario);
+						personas.push_back(forense);
 						break;
 					}//fin case Agregar Forense
 				}//fin switch Menu Agregar Persona 
@@ -188,12 +191,12 @@ int main(int argc,char* argv[]){
 					string username,contrasena;
 					cout<<"Ingrese su nombre de usuario: ";
 					cin>>username;
-					cout<<"Ingrese su contraseña: "
+					cout<<"Ingrese su contraseña: ";
 					cin>>contrasena;
 					bool login=false;
 					for (int i = 0; i < personas.size(); ++i)
 					{
-						if (personas[i].getNombreUsuario()==username&&personas[i].getContrasena()==contrasena)
+						if (personas[i]->getNombreUsuario()==username&&personas[i]->getContrasena()==contrasena)
 						{
 							login=true;
 						}
@@ -216,18 +219,9 @@ int main(int argc,char* argv[]){
 		int opcionm_principal=MenuPrincipal();
 	}//fin while Menu Principal
 	//Deletes
-	for (int i = 0; i < personas.size(); ++i)
-	{
-		delete personas[i];
-	}
-	for (int i = 0; i < evidencias.size(); ++i)
-	{
-		delete evidencias[i];
-	}
-	for (int i = 0; i < casos.size(); ++i)
-	{
-		delete casos[i];
-	}
+	delete personas;
+	delete evidencias;
+	delete casos;
 	return 0;
 }
 int MenuPrincipal(){//Menu Principal
