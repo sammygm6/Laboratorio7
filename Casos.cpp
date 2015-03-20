@@ -25,7 +25,7 @@ Casos::Casos(const Casos& pinga)
 }
 
 Casos::~Casos(){
-	delete Casos;
+	delete this;
 }
 
 string Casos::toString()const{

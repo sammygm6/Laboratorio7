@@ -15,7 +15,7 @@ fechanacimiento(other.fechanacimiento){
 
 }
 Persona::~Persona(){
-	delete Persona;
+	delete this;
 }
 string Persona::getNombreReal()const{
 	return nombrereal;

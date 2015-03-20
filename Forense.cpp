@@ -16,7 +16,7 @@ Forense::Forense(const Forense& other):Persona(other),fecha_de_ingreso(other.fec
 
 }
 Forense::~Forense(){
-	delete Forense;
+	delete this;
 }
 string Forense::toString(){
 	stringstream ss;

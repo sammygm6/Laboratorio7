@@ -14,6 +14,9 @@ Administrativo::Administrativo(string nombrereal,string nombreusuario,string con
 Administrativo::Administrativo(const Administrativo& other) : Persona(other), clave(other.clave), puesto(other.puesto){
 
 }
+Administrativo::~Administrativo(){
+	delete this;
+}
 string Administrativo::toString()const{
 	stringstream ss;
 	ss << Persona::toString() << " Clave: " << clave << " Puesto: " << puesto;
