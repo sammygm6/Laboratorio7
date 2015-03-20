@@ -181,13 +181,13 @@ int main(int argc,char* argv[]){
 			{//Case Eliminar Persona 
 				for (int i = 0; i < personas.size(); ++i)
 				{
-					cout<<i+1". "<<personas[i]->toString()<<endl;
+					cout<<i+1<<". "<<personas[i]->toString()<<endl;
 				}
 				cout<<endl;
 				int posicionelimin;
 				cout<<"Elija la posicion persona que desea eliminar: ";
 				cin>>posicionelimin;
-				personas.erase(personas.begi()+posicionelimin-2);
+				personas.erase(personas.begin()+posicionelimin-2);
 				break;
 			}//fin case Eliminar Persona 
 			case 3:
