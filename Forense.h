@@ -9,6 +9,7 @@ class Forense : public Persona
 {
 	string fecha_de_ingreso;
 	string horario;
+	int tipo;
 public:
 	Forense(string,string,string,int,string,string,string,string);
 	Forense(const Forense&);
@@ -18,5 +19,6 @@ public:
 	string getHorario()const;
 	void setFecha_de_ingreso(string);
 	void setHorario(string);
+	virtual int getTipo()const;
 };
 #endif

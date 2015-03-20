@@ -16,7 +16,8 @@ class Homicidio : public Casos
 	vector<string> sospechosos;
 >>>>>>> 8f5458609b214dc918cd4102963e42ed86f607e0
 public:
-	Homicidio(int, vector<Investigador>, vector<Evidencia>, string, string, bool, vector<Sospechoso>);
+	Homicidio(int, vector<Investigador>, vector<Evidencia>, string, string, bool, vector<string>);
+	Homicidio(const Homicidio&);
 	string toString()const;
 	vector<Sospechoso> getSospechosos()const;
 	Sospechoso getSospechoso(int)const;

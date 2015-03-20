@@ -9,6 +9,7 @@ class Administrativo : public Persona
 {
 	string clave;
 	string puesto;
+	int tipo;
 public:
 	Administrativo(string,string,string,int,string,string,string,string);
 	Administrativo(const Administrativo&);
@@ -18,5 +19,6 @@ public:
 	string getPuesto()const;
 	void setClave(string);
 	void setPuesto(string);	
+	virtual int getTipo()const;
 };
 #endif
