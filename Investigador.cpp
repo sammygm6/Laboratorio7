@@ -14,7 +14,7 @@ casos_cerrados(casos_cerrados), casos_sin_resolver(casos_sin_resolver) {
 }
 Investigador::Investigador(const Investigador& other):Persona(other), casos_atendidos(other.casos_atendidos),
 casos_cerrados(other.casos_cerrados), casos_sin_resolver(other.casos_sin_resolver){
-
+	tipo = 2;
 }
 Investigador::~Investigador(){
 	delete this;
@@ -32,6 +32,9 @@ int Investigador::getCasos_cerrados()const{
 }
 int Investigador::getCasos_sin_resolver()const{
 	return casos_sin_resolver;
+}
+int Investigador::getTipo()const{
+	return tipo;
 }
 void Investigador::setCasos_atendidos(int casos_atendidos){
 	this->casos_atendidos = casos_atendidos;

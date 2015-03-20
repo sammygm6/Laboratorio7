@@ -7,8 +7,13 @@ using std::string;
 using std::stringstream;
 
 Homicidio::Homicidio(int num, vector<Investigador> Investigadores, vector<Evidencia> evidence, string hora, string fecha,
-						bool cerrado, vector<Sospechoso> sospechosos)
+						bool cerrado, vector<string> sospechosos)
 :Casos(num,Investigadores,evidence,hora,fecha,cerrado), sospechosos(sospechosos){
+
+}
+Homicidio::Homicidio(const Homicidio& other)
+:Casos(other.num,other.Investigadores,other.evidence,other.hora,other.fecha,other.cerrado),
+	sospechosos(other.sospechosos){
 
 }
 string Homicidio::toString()const{

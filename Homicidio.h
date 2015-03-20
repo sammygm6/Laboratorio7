@@ -10,7 +10,8 @@ class Homicidio : public Casos
 {
 	vector<string> sospechosos;
 public:
-	Homicidio(int, vector<Investigador>, vector<Evidencia>, string, string, bool, vector<Sospechoso>);
+	Homicidio(int, vector<Investigador>, vector<Evidencia>, string, string, bool, vector<string>);
+	Homicidio(const Homicidio&);
 	string toString()const;
 	vector<Sospechoso> getSospechosos()const;
 	Sospechoso getSospechoso(int)const;

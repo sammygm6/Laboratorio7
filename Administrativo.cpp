@@ -9,7 +9,7 @@ using std::stringstream;
 Administrativo::Administrativo(string nombrereal,string nombreusuario,string contrasena,int edad,string cedula,string fechanacimiento
 								,string clave,string puesto)
 :Persona(nombrereal,nombreusuario,contrasena,edad,cedula,fechanacimiento),clave(clave),puesto(puesto){
-
+	tipo = 1;
 	}
 Administrativo::Administrativo(const Administrativo& other) : Persona(other), clave(other.clave), puesto(other.puesto){
 
@@ -27,6 +27,9 @@ string Administrativo::getClave()const{
 }
 string Administrativo::getPuesto()const{
 	return puesto;
+}
+int Administrativo::getTipo()const{
+	return tipo;
 }
 void Administrativo::setClave(string clave){
 	this->clave = clave;
