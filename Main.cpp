@@ -25,27 +25,150 @@ int main(int argc,char* argv[]){
 	vector<Casos*> casos;
 	while(opcionm_principal<5)
 	{//While Menu Principal
-		switch(opinionm_principal)
+		switch(opcionm_principal)
 		{//switch Menu Princpial
 			case 1:
 			{//Case Agregar Persona
 				int opcionm_agregarpersona=MenuAgregarPersona();//Opcion Menu Agregar Persona
 				string nombrereal,nombreusuario,password,cedula,fechanacimiento; 
 				int edad;
+				bool yaExiste=false;
 				switch(opcionm_agregarpersona)
 				{//switch Menu Agregar Persona 
 					case 1:
 					{//case Agregar Peronal Administrativo
+						string clave,puesto;
 						cout<<"Ingrese el nombre: ";
 						cin>>nombrereal;
+						cout<<"Ingrese su numero de cedula: ";
+						cin>>cedula;
+						cout<<"Ingrese su fecha de nacimiento (Dia/Mes/Año): ";
+						cin>>fechanacimiento
+						cout<<"Ingrese su edad: ";
+						cin>>edad;
+						cout<<"Ingrese un nombre de Usuario: ";
+						cin>>nombreusuario;
+						for (int i = 0; i < personas.size(); ++i)
+						{
+							if (personas[i].getNombreUsuario()==nombreusuario)
+							{
+								yaexiste=true;
+								break;
+							}
+						}
+						while(yaexiste==true){
+							int contadorentradaif=0;
+							cout<<"Ya existe este Nombre de Usuario\nIngrese un nombre de Usuario: ";
+							cin>>nombreusuario;
+							for (int i = 0; i < personas.size(); ++i)
+							{
+								if (personas[i].getNombreUsuario()==nombreusuario)
+								{
+									contadorentradaif++;
+									yaexiste=true;
+									break;
+								}
+							}
+							if(contadorentradaif==0){
+								yaexiste=false;
+							}
+						}
+						cout<<"Ingrese Una contraseña (memoricela): ";
+						cin>>password;
+						cout<<"Ingrese su puesto: ";
+						cin>>puesto;
+						cout<<"Ingrese su clave de ingreso (memoricela): ";
+						cin>>clave;
+						personas.push_back(nombrereal,nombreusuario,password,edad,cedula,fechanacimiento,clave,puesto);
 						break;
 					}//fin case Agregar Peronal Administrativo 
 					case 2:
 					{//case Agregar Investigador
+						cout<<"Ingrese el nombre: ";
+						cin>>nombrereal;
+						cout<<"Ingrese su numero de cedula: ";
+						cin>>cedula;
+						cout<<"Ingrese su fecha de nacimiento (Dia/Mes/Año): ";
+						cin>>fechanacimiento
+						cout<<"Ingrese su edad: ";
+						cin>>edad;
+						cout<<"Ingrese un nombre de Usuario: ";
+						cin>>nombreusuario;
+						for (int i = 0; i < personas.size(); ++i)
+						{
+							if (personas[i].getNombreUsuario()==nombreusuario)
+							{
+								yaexiste=true;
+								break;
+							}
+						}
+						while(yaexiste==true){
+							int contadorentradaif=0;
+							cout<<"Ya existe este Nombre de Usuario\nIngrese un nombre de Usuario: ";
+							cin>>nombreusuario;
+							for (int i = 0; i < personas.size(); ++i)
+							{
+								if (personas[i].getNombreUsuario()==nombreusuario)
+								{
+									contadorentradaif++;
+									yaexiste=true;
+									break;
+								}
+							}
+							if(contadorentradaif==0){
+								yaexiste=false;
+							}
+						}
+						cout<<"Ingrese Una contraseña (memoricela): ";
+						cin>>password;
+						personas.push_back(nombrereal,nombreusuario,password,edad,cedula,fechanacimiento);
 						break;
 					}//fin case Agregar Investigador 
 					case 3:
 					{//case Agregar Forense
+						string fecha_de_ingreso,horario;
+						cout<<"Ingrese el nombre: ";
+						cin>>nombrereal;
+						cout<<"Ingrese su numero de cedula: ";
+						cin>>cedula;
+						cout<<"Ingrese su fecha de nacimiento (Dia/Mes/Año): ";
+						cin>>fechanacimiento
+						cout<<"Ingrese su edad: ";
+						cin>>edad;
+						cout<<"Ingrese un nombre de Usuario: ";
+						cin>>nombreusuario;
+						for (int i = 0; i < personas.size(); ++i)
+						{
+							if (personas[i].getNombreUsuario()==nombreusuario)
+							{
+								yaexiste=true;
+								break;
+							}
+						}
+						while(yaexiste==true){
+							int contadorentradaif=0;
+							cout<<"Ya existe este Nombre de Usuario\nIngrese un nombre de Usuario: ";
+							cin>>nombreusuario;
+							for (int i = 0; i < personas.size(); ++i)
+							{
+								if (personas[i].getNombreUsuario()==nombreusuario)
+								{
+									contadorentradaif++;
+									yaexiste=true;
+									break;
+								}
+							}
+							if(contadorentradaif==0){
+								yaexiste=false;
+							}
+						}
+						cout<<"Ingrese Una contraseña (memoricela): ";
+						cin>>password;
+						cout<<"Ingrese su puesto: ";
+						cin>>puesto;
+						cout<<"Ingrese su clave de ingreso (memoricela): ";
+						cin>>clave;
+						personas.push_back(nombrereal,nombreusuario,password,edad,cedula,fechanacimiento,clave,puesto);
 						break;
 					}//fin case Agregar Forense
 				}//fin switch Menu Agregar Persona 
@@ -62,6 +185,7 @@ int main(int argc,char* argv[]){
 			case 4:
 			{//Case Log In
 				if(personas.size()>0){
+					string username,contrasena;
 					cout<<"Ingrese su nombre de usuario: ";
 					cin>>username;
 					cout<<"Ingrese su contraseña: "

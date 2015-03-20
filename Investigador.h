@@ -11,7 +11,7 @@ class Investigador : public Persona
 	int casos_cerrados;
 	int casos_sin_resolver;
 public:
-	Investigador(string,string,string,int,string,string,int,int,int);
+	Investigador(string,string,string,int,string,string,int=0,int=0,int=0);
 	Investigador(const Investigador&);
 	virtual string toString();
 	int getCasos_atendidos()const;
