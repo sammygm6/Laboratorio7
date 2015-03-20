@@ -219,9 +219,20 @@ int main(int argc,char* argv[]){
 		int opcionm_principal=MenuPrincipal();
 	}//fin while Menu Principal
 	//Deletes
-	delete personas;
-	delete evidencias;
-	delete casos;
+
+
+	for (int i = 0; i < personas.size(); ++i)
+	{
+		delete personas[i];
+	}
+	for (int i = 0; i < evidencias.size(); ++i)
+	{
+		delete evidencias[i];
+	}
+	for (int i = 0; i < casos.size(); ++i)
+	{
+		delete casos[i];
+	}
 	return 0;
 }
 int MenuPrincipal(){//Menu Principal
