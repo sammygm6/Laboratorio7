@@ -7,22 +7,21 @@ using std::string;
 using std::stringstream;
 
 Homicidio::Homicidio(int num, vector<Investigador> Investigadores, vector<Evidencia> evidence, string hora, string fecha,
-						bool cerrado, vector<string> sospechosos)
-:Casos(num,Investigadores,evidence,hora,fecha,cerrado), sospechosos(sospechosos){
+						bool cerrado, vector<string> sospechosos, string nombre_sospechoso_principal, string nombre_victima)
+:Casos(num, Investigadores, evidence, hora, fecha, cerrado),
+	 nombre_sospechoso_principal(nombre_sospechoso_principal), nombre_victima(nombre_victima){
 
 }
-Homicidio::Homicidio(const Homicidio& other)
-:Casos(other.num,other.Investigadores,other.evidence,other.hora,other.fecha,other.cerrado),
-	sospechosos(other.sospechosos){
+//Homicidio::Homicidio(const Homicidio& other){
 
-}
+//}
 string Homicidio::toString()const{
 	stringstream ss;
 	ss << "Numero de Caso: " << num;
 	return ss.str();
 }
-vector<Sospechoso> Homicidio::getSospechosos()const{
-	return this;
+vector<string> Homicidio::getSospechosos()const{
+	return sospechosos;
 }
 Sospechoso Homicidio::getSospechoso(int i)const{
 	return sospechosos.at(i);

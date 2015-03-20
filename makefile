@@ -10,14 +10,14 @@ Evidencia.o:	Evidencia.cpp Evidencia.h
 Sospechoso.o:	Sospechoso.cpp Sospechoso.h
 	g++ -c Sospechoso.cpp
 
-Homicidio.o:	Homicidio.cpp Homicidio.h Casos.h
-	g++ -c Homicidio.cpp
-
 Secuestro.o:	Secuestro.cpp Secuestro.h Casos.h
 	g++ -c Secuestro.cpp
 
 Casos.o:	Casos.cpp Casos.h
 	g++ -c Casos.cpp
+
+Homicidio.o:	Homicidio.cpp Homicidio.h Casos.h
+	g++ -c Homicidio.cpp
 
 Forense.o:	Forense.cpp Forense.h Persona.h
 	g++ -c Forense.cpp

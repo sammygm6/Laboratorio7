@@ -8,7 +8,7 @@
 using namespace std;
 
 class Casos{
-	int num;
+	
 	vector<Investigador> Investigadores;
 	vector<Evidencia> evidence;
 	string hora;
@@ -16,14 +16,15 @@ class Casos{
 	bool cerrado;
 
 public:
+	int num;
+	Casos (int, vector<Investigador>, vector<Evidencia>, string, string, bool);
+	Casos (const Casos&);
 	int getNum()const;
 	vector<Investigador> getInvestigadores()const;
 	vector<Evidencia> getEvidence()const;
 	string getHora()const;
 	string getFecha()const;
 	bool isCerrado()const;
-	Casos (int, vector<Investigador>, vector<Evidencia>, string, string, bool);
-	Casos (const Casos&);
 	virtual ~Casos();
 	virtual string toString()const;	
 	};

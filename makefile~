@@ -13,6 +13,9 @@ Sospechoso.o:	Sospechoso.cpp Sospechoso.h
 Homicidio.o:	Homicidio.cpp Homicidio.h Casos.h
 	g++ -c Homicidio.cpp
 
+Secuestro.o:	Secuestro.cpp Secuestro.h Casos.h
+	g++ -c Secuestro.cpp
+
 Casos.o:	Casos.cpp Casos.h
 	g++ -c Casos.cpp
 
