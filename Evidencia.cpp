@@ -6,7 +6,7 @@
 using std::string;
 using std::streamstring;
 
-Evidencia::Evidencia(string,string,string,bool,bool):nombre(nombre),tipo(tipo),lugar(lugar),huella(huella),procesada(procesada){
+Evidencia::Evidencia(string,int,string,bool,bool):nombre(nombre),tipo(tipo),lugar(lugar),huella(huella),procesada(procesada){
 	
 }
 Evidencia(const Evidencia& other):nombre(other.nombre),tipo(other.tipo),lugar(other.lugar),huella(other.huella),procesada(other.procesada){
@@ -23,7 +23,7 @@ string Evidencia::toString()const{
 string Evidencia::GetNombre()const{
 	return nombre;
 }
-string Evidencia::GetTipo()const{
+int Evidencia::GetTipo()const{
 	return tipo;
 }
 string Evidencia::GetLugar()const{
@@ -38,7 +38,7 @@ bool Evidencia::GetProcesada()const{
 void Evidencia::SetNombre(string nombre){
 	this->nombre=nombre;
 }
-void Evidencia::SetTipo(string tipo){
+void Evidencia::SetTipo(int tipo){
 	this->tipo=tipo;
 }
 void Evidencia::SetLugar(string lugar){
