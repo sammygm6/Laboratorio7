@@ -23,7 +23,7 @@ int main(int argc,char* argv[]){
 	vector<Persona*> personas;
 	vector<Evidencia*> evidencias;
 	vector<Casos*> casos;
-	while(opcionm_principal<5)
+	while(opcionm_principal<4)
 	{//While Menu Principal
 		switch(opcionm_principal)
 		{//switch Menu Princpial
@@ -178,14 +178,19 @@ int main(int argc,char* argv[]){
 				break;
 			}//fin case agregar Persona
 			case 2:
-			{//Case Modificar Persona 
-				break;
-			}//fin case Modificar Persona 
-			case 3:
 			{//Case Eliminar Persona 
+				for (int i = 0; i < personas.size(); ++i)
+				{
+					cout<<i+1". "<<personas[i]->toString()<<endl;
+				}
+				cout<<endl;
+				int posicionelimin;
+				cout<<"Elija la posicion persona que desea eliminar: ";
+				cin>>posicionelimin;
+				personas.erase(personas.begi()+posicionelimin-2);
 				break;
-			}//fin case Eliminar Persona
-			case 4:
+			}//fin case Eliminar Persona 
+			case 3:
 			{//Case Log In
 				if(personas.size()>0){
 					string username,contrasena;
@@ -237,10 +242,10 @@ int main(int argc,char* argv[]){
 }
 int MenuPrincipal(){//Menu Principal
 	int opcion;
-	cout<<"Menu Principal\n1. Agregar Persona\n2. Modificar Persona\n3. Eliminar Persona\n4. Log in\n5. Salir\nElija una Opcion: ";
+	cout<<"Menu Principal\n1. Agregar Persona\n2. Eliminar Persona\n3. Log in\n4. Salir\nElija una Opcion: ";
 	cin>>opcion;
 	while(opcion<1||opcion>5){
-		cout<<"Error! Vuelva a Ingresar la Opcion\nMenu Principal\n1. Agregar Persona\n2. Modificar Persona\n3. Eliminar Persona\n4. Log in\n5. Salir\nElija una Opcion: ";
+		cout<<"Error! Vuelva a Ingresar la Opcion\nMenu Principal\n1. Agregar Persona\n2. Eliminar Persona\n3. Log in\n4. Salir\nElija una Opcion: ";
 		cin>>opcion;
 	}
 	return opcion;
