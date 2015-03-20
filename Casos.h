@@ -16,14 +16,20 @@ class Casos{
 	bool cerrado;
 
 public:
-	int getNum()const;
-	vector<Investigador> getInvestigadores()const;
-	vector<Evidencia> getEvidence()const;
-	string getHora()const;
-	string getFecha()const;
-	bool isCerrado()const;
 	Casos (int, vector<Investigador>, vector<Evidencia>, string, string, bool);
 	Casos (const Casos&);
+	int getNum()const;
+	void setNum(int);
+	vector<Investigador> getInvestigadores()const;
+	void setInvestigadores(vector<Investigador>);
+	vector<Evidencia> getEvidence()const;
+	void setEvidence(vector<Evidencia>);
+	string getHora()const;
+	void setHora(string);
+	string getFecha()const;
+	void setFecha(string);
+	bool isCerrado()const;
+	void setCerrado(bool);
 	virtual ~Casos();
 	virtual string toString()const;	
 	};

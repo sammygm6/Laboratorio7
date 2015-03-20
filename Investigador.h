@@ -10,6 +10,7 @@ class Investigador : public Persona
 	int casos_atendidos;
 	int casos_cerrados;
 	int casos_sin_resolver;
+	int tipo;
 public:
 	Investigador(string,string,string,int,string,string,int=0,int=0,int=0);
 	Investigador(const Investigador&);
@@ -21,5 +22,6 @@ public:
 	void setCasos_atendidos(int);
 	void setCasos_cerrados(int);
 	void setCasos_sin_resolver(int);
+	virtual int getTipo()const;
 };
 #endif

@@ -8,14 +8,21 @@ using std::string;
 
 class Homicidio : public Casos
 {
+	string nombre_sospechoso_principal;
+	string nombre_victima;
 	vector<string> sospechosos;
 public:
-	Homicidio(int, vector<Investigador>, vector<Evidencia>, string, string, bool, vector<Sospechoso>);
-	string toString()const;
-	vector<Sospechoso> getSospechosos()const;
-	Sospechoso getSospechoso(int)const;
-	Sospechoso addSospechoso(Sospechoso);
-	void setSospechosos(vector<Sospechoso>);
+	Homicidio(int, vector<Investigador>, vector<Evidencia>, string, string, bool, vector<string>, string, string);
+	Homicidio(const Homicidio&);
+	virtual string toString()const;
+	string getNombreSospechosoPrincipal()const;
+	string getNombreVictima()const;
+	vector<string> getSospechosos()const;
+	string getSospechoso(int)const;
+	void setNombreSospechosoPrincipal(string);
+	void setNombreVictima(string);
+	void setSospechosos(vector<string>);
+	void addSospechoso(string);
 
 };
 #endif

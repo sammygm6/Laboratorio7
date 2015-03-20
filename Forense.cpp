@@ -10,7 +10,7 @@ Forense::Forense(string nombrereal,string nombreusuario,string contrasena,int ed
 				string fecha_de_ingreso,string horario)
 :Persona(nombrereal,nombreusuario,contrasena,edad,cedula,fechanacimiento),
 			fecha_de_ingreso(fecha_de_ingreso),horario(horario){
-
+				tipo = 3;
 }
 Forense::Forense(const Forense& other):Persona(other),fecha_de_ingreso(other.fecha_de_ingreso),horario(other.horario){
 
@@ -28,6 +28,9 @@ string Forense::getFecha_de_ingreso()const{
 }
 string Forense::getHorario()const{
 	return horario;
+}
+int Forense::getTipo()const{
+	return tipo;
 }
 void Forense::setFecha_de_ingreso(string fecha_de_ingreso){
 	this->fecha_de_ingreso = fecha_de_ingreso;
