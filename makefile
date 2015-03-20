@@ -1,4 +1,4 @@
-exe:	Main.o Persona.o Investigador.o Administrativo.o Sospechoso.o Forense.o Homicidio.o Casos.o Evidencia.o
+exe:	Main.o Persona.o Investigador.o Administrativo.o Sospechosos.o Forense.o Homicidio.o Casos.o Evidencia.o
 	g++ Main.o Persona.o Investigador.o Administrativo.o Sospechoso.o Forense.o Homicidio.o Casos.o Evidencia.o -o exe
 
 Main.o:	Main.cpp Persona.h Investigador.h Administrativo.h Sospechoso.h Forense.h Homicidio.h Casos.h Evidencia.h
@@ -6,6 +6,9 @@ Main.o:	Main.cpp Persona.h Investigador.h Administrativo.h Sospechoso.h Forense.
 
 Evidencia.o:	Evidencia.cpp Evidencia.h
 	g++ -c Evidencia.cpp
+
+Sospechosos.o:	Sospechosos.cpp Sospechosos.h
+	g++ -c Sospechosos.cpp
 
 Homicidio.o:	Homicidio.cpp Homicidio.h Casos.h
 	g++ -c Homicidio.cpp

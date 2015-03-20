@@ -12,6 +12,7 @@ class Administrativo : public Persona
 public:
 	Administrativo(string,string,string,int,string,string,string,string);
 	Administrativo(const Administrativo&);
+	virtual ~Administrativo();
 	virtual string toString()const;
 	string getClave()const;
 	string getPuesto()const;

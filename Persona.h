@@ -16,6 +16,7 @@ class Persona
 public:
 	Persona(string,string,string,int,string,string);
 	Persona(const Persona&);
+	virtual ~Persona();
 	string getNombreReal()const;
 	string getNombreUsuario()const;
 	string getContrasena()const;

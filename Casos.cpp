@@ -24,6 +24,10 @@ Casos::Casos(const Casos& pinga)
 
 }
 
+Casos::~Casos(){
+	delete this;
+}
+
 string Casos::toString()const{
 	stringstream ss;
 	ss<<"Caso: ["<<n<<", "<<p<<", "<<e<<", "<<h<<", "<<f<<", "<<c<<"]";

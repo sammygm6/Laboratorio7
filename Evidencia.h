@@ -11,7 +11,7 @@ class Evidencia{
 public:
 	Evidencia(string,string,string,bool,bool);
 	Evidencia(const Evidencia&);
-	~Evidencia();
+	virtual ~Evidencia();
 	string toString()const;
 	string GetNombre()const;
 	string GetTipo()const;
