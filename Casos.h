@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class GestionCasos{
+class Casos{
 	int num;
 	vector<Investigador> Investigadores;
 	vector<Evidencia> evidence;
@@ -22,10 +22,8 @@ public:
 	string getHora()const;
 	string getFecha()const;
 	bool isCerrado()const;
-
-public:
 	Casos (int, vector<Investigador>, vector<Evidencia>, string, string, bool);
-	Casos (const Casos)const;
+	Casos (const Casos&);
 	virtual string toString()const;	
 	};
 
