@@ -20,7 +20,7 @@ Casos::Casos(int n, vector<Investigador> p, vector<Evidencia e, string h, string
 }
 
 Casos::Casos(const Casos& pinga) 
-	:num(pinga.num), Investigadores(pinga.Investigadores), evidence(pinga.evidence), hora(pinga.hora), fecha(pinga.fecha), cerrado(pinga.cerrado) ){
+	:num(pinga.num), Investigadores(pinga.Investigadores), evidence(pinga.evidence), hora(pinga.hora), fecha(pinga.fecha), cerrado(pinga.cerrado){
 
 }
 

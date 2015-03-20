@@ -6,9 +6,8 @@
 using std::string;
 using std::stringstream;
 
-Homicidio::Homicidio(int num, vector<Investigador> Investigadores, vector<Evidencia> evidence, string hora, string fecha,
-						bool cerrado, vector<Sospechoso> sospechosos)
-:Casos(num,Investigadores,evidence,hora,fecha,cerrado), sospechosos(sospechosos){
+Homicidio::Homicidio(int num, vector<Investigador> Investigadores, vector<Evidencia> evidence, string hora, string fecha,bool cerrado, vector<Sospechoso> sospechosos, string sospechoso_principal, string nombre_victima)
+:Casos(num,Investigadores,evidence,hora,fecha,cerrado), sospechosos(sospechosos), sospechoso_principal(sospechoso_principal), nombre_victima(nombre_victima){
 
 }
 string Homicidio::toString()const{
@@ -28,3 +27,17 @@ Sospechoso Homicidio::addSospechoso(Sospechoso sospechoso){
 void Homicidio::setSospechosos(vector<Sospechoso> sospechosos){
 	this->sospechosos = sospechosos;
 }
+
+string Homicidio::getNombreSospechosoPrincipal()const{
+	return sospechoso_principal;
+}
+void Homicidio::setNombreSospechosoPrincipal(string sospechoso_principal){
+	this->sospechoso_principal = sospechoso_principal;
+}
+string getNombreVictima()const{
+	return nombre_victima;
+}
+void setNombreVictima(string nombre_victima){
+	this->nombre_victima = nombre_victima;
+}
+
