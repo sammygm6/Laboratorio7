@@ -14,7 +14,7 @@ using namespace std;
         string fecha;
         bool cerrado;*/
 
-Casos::Casos(int num, vector<Investigador> Investigadores, vector<Evidencia evidence, string hora, string fecha, bool cerrado)
+Casos::Casos(int num, vector<Investigador> Investigadores, vector<Evidencia> evidence, string hora, string fecha, bool cerrado)
 	:num(num), Investigadores(Investigadores), evidence(evidence), hora(hora), fecha(fecha), cerrado(cerrado){
 
 }
@@ -30,6 +30,7 @@ Casos::~Casos(){
 
 string Casos::toString()const{
 	stringstream ss;
-	ss<<"Caso: ["<<num<<", "<<Investigadores<<", "<<evidence<<", "<<hora<<", "<<fecha<<", "<<cerrado<<"]";
+	ss << "Caso: " << num;
+/*ss << "Caso: [" << num << ", " << Investigadores << ", " << evidence<< ", " << hora << ", "<< fecha << ", " << cerrado << "]";*/
 	return ss.str();
 }
