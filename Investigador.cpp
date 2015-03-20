@@ -16,6 +16,9 @@ Investigador::Investigador(const Investigador& other):Persona(other), casos_aten
 casos_cerrados(other.casos_cerrados), casos_sin_resolver(other.casos_sin_resolver){
 
 }
+Investigador::~Investigador(){
+	delete Investigador;
+}
 string Investigador::toString(){
 	stringstream ss;
 	ss << Persona::toString() << " Casos Atendidos: " << casos_atendidos << " Casos Cerrados: " << casos_cerrados << " Casos Sin Resolver: " << casos_sin_resolver;

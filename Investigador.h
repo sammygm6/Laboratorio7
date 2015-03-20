@@ -13,6 +13,7 @@ class Investigador : public Persona
 public:
 	Investigador(string,string,string,int,string,string,int,int,int);
 	Investigador(const Investigador&);
+	virtual ~Investigador();
 	virtual string toString();
 	int getCasos_atendidos()const;
 	int getCasos_cerrados()const;

@@ -12,6 +12,9 @@ Sospechosos::Sospechoso(string nombre,bool principal,bool culpable,bool victima)
 Sospechoso::Sospechoso(const Sospechoso& other):Sospechoso(other){
 
 }
+Sospechoso::~Sospechoso(){
+	delete Sospechoso;
+}
 string Sospechoso::toString()const{
 	stringstream ss;
 	ss << "Nombre: " << nombre;

@@ -14,6 +14,9 @@ Persona::Persona(const Persona& other)
 fechanacimiento(other.fechanacimiento){
 
 }
+Persona::~Persona(){
+	delete Persona;
+}
 string Persona::getNombreReal()const{
 	return nombrereal;
 }
@@ -49,7 +52,7 @@ void Persona::setContrasena(string contrasena){
 void Persona::setEdad(int edad){
 	this->edad = edad;
 }
-void Persona::setCedula(sting cedula){
+void Persona::setCedula(string cedula){
 	this->cedula = cedula;
 }
 void Persona::setFechaNac(string fechanacimiento){

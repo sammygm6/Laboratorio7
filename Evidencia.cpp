@@ -13,7 +13,7 @@ Evidencia(const Evidencia& other):nombre(other.nombre),tipo(other.tipo),lugar(ot
 
 }
 Evidencia::~Evidencia(){
-
+	delete Evidencia;
 }
 string Evidencia::toString()const{
 	stringstream ss;
