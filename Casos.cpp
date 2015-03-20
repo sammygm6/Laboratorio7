@@ -15,12 +15,12 @@ using namespace std;
         bool cerrado;*/
 
 Casos::Casos(int n, vector<Investigador> p, vector<Evidencia e, string h, string f, bool c)
-	:n(n), p(p), e(e), h(h), f(f), c(c){
+	:num(n), Investigadores(p), evidence(e), hora(h), fecha(f), cerrado(c){
 
 }
 
 Casos::Casos(const Casos& pinga) 
-	:n(pinga.n), p(pinga.p), e(pinga.e), h(pinga.h), f(pinga.f), c(pinga.c){
+	:num(pinga.num), Investigadores(pinga.Investigadores), evidence(pinga.evidence), hora(pinga.hora), fecha(pinga.fecha), cerrado(pinga.cerrado) ){
 
 }
 

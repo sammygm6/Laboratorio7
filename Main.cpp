@@ -25,7 +25,7 @@ int main(int argc,char* argv[]){
 	vector<Casos*> casos;
 	while(opcionm_principal<5)
 	{//While Menu Principal
-		switch(opinionm_principal)
+		switch(opcionm_principal)
 		{//switch Menu Princpial
 			case 1:
 			{//Case Agregar Persona
