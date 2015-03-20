@@ -15,15 +15,14 @@ public:
 	Homicidio(int, vector<Investigador>, vector<Evidencia>, string, string, bool, vector<string>, string, string);
 	Homicidio(const Homicidio&);
 	virtual string toString()const;
-	vector<Sospechoso> getSospechosos()const;
-	Sospechoso getSospechoso(int)const;
-	Sospechoso addSospechoso(Sospechoso);
-	void setSospechosos(vector<Sospechoso>);
 	string getNombreSospechosoPrincipal()const;
-	void setNombreSospechosoPrincipal(string);
 	string getNombreVictima()const;
+	vector<string> getSospechosos()const;
+	string getSospechoso(int)const;
+	void setNombreSospechosoPrincipal(string);
 	void setNombreVictima(string);
-	
+	void setSospechosos(vector<string>);
+	void addSospechoso(string);
 
 };
 #endif
