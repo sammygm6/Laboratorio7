@@ -29,11 +29,15 @@ int main(int argc,char* argv[]){
 		{//switch Menu Princpial
 			case 1:
 			{//Case Agregar Persona
-				int opcionm_agregarpersona=MenuAgregarPersona();//Opcion Menu Agregar Persona 
+				int opcionm_agregarpersona=MenuAgregarPersona();//Opcion Menu Agregar Persona
+				string nombrereal,nombreusuario,password,cedula,fechanacimiento; 
+				int edad;
 				switch(opcionm_agregarpersona)
 				{//switch Menu Agregar Persona 
 					case 1:
 					{//case Agregar Peronal Administrativo
+						cout<<"Ingrese el nombre: ";
+						cin>>nombrereal;
 						break;
 					}//fin case Agregar Peronal Administrativo 
 					case 2:
@@ -57,11 +61,31 @@ int main(int argc,char* argv[]){
 			}//fin case Eliminar Persona
 			case 4:
 			{//Case Log In
-				cout<<"Ingrese su nombre de usuario: ";
-				cin>>username;
-				cout<<"Ingrese su contraseña: "
-				cin>>contrasena;
-				
+				if(personas.size()>0){
+					cout<<"Ingrese su nombre de usuario: ";
+					cin>>username;
+					cout<<"Ingrese su contraseña: "
+					cin>>contrasena;
+					bool login=false;
+					for (int i = 0; i < personas.size(); ++i)
+					{
+						if (personas[i].getNombreUsuario()==username&&personas[i].getContrasena()==contrasena)
+						{
+							login=true;
+						}
+					}
+					char resp='s';
+					while(login==true){
+						cout<<"Desea SALIR del sistema?(s/n): ";
+						cin>>resp;
+						if (resp=='n'||resp=='N')
+						{
+							login=false;
+						}
+					}
+				}else{
+					cout<<"No Hay Usuarios";
+				}
 				break;
 			}//fin case Log In
 		}//finn switch Menu Principal
