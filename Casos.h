@@ -24,6 +24,7 @@ public:
 	bool isCerrado()const;
 	Casos (int, vector<Investigador>, vector<Evidencia>, string, string, bool);
 	Casos (const Casos&);
+	virtual ~Casos();
 	virtual string toString()const;	
 	};
 

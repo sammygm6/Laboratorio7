@@ -15,6 +15,9 @@ Forense::Forense(string nombrereal,string nombreusuario,string contrasena,int ed
 Forense::Forense(const Forense& other):Persona(other),fecha_de_ingreso(other.fecha_de_ingreso),horario(other.horario){
 
 }
+Forense::~Forense(){
+	delete Forense;
+}
 string Forense::toString(){
 	stringstream ss;
 	ss << Persona::toString() << " Fecha de Ingreso: " << fecha_de_ingreso << " Horario: " << horario;

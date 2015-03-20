@@ -8,7 +8,7 @@ using std::string;
 
 class Homicidio : public Casos
 {
-	vector<Sospechoso> sospechosos;
+	vector<string> sospechosos;
 public:
 	Homicidio(int, vector<Investigador>, vector<Evidencia>, string, string, bool, vector<Sospechoso>);
 	string toString()const;

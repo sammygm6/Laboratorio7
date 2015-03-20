@@ -13,6 +13,7 @@ class Sospechoso
 public:
 	Sospechoso(string,bool,bool,bool);
 	Sospechoso(const Sospechoso&);
+	virtual ~Sospechoso();
 	virtual string toString()const;
 	string getNombre()const;
 	bool getPrincipal()const;

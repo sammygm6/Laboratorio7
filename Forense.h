@@ -12,6 +12,7 @@ class Forense : public Persona
 public:
 	Forense(string,string,string,int,string,string,string,string);
 	Forense(const Forense&);
+	virtual ~Forense();
 	virtual string toString();
 	string getFecha_de_ingreso()const;
 	string getHorario()const;
