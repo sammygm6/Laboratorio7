@@ -364,6 +364,7 @@ int main(int argc,char* argv[]){
 							{
 								cout<<i+1<<". "<<evidencias[i]->toString()<<endl;
 							}
+							
 							cout<<endl;
 							int posicionelimin;
 							cout<<"Elija la posicion persona que desea eliminar: ";
