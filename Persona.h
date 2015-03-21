@@ -16,7 +16,6 @@ class Persona
 	string fechanacimiento;
 public:
 	Persona(string,string,string,int,string,string);
-	Persona(const Persona&);
 	virtual ~Persona();
 	string getNombreReal()const;
 	string getNombreUsuario()const;
@@ -24,7 +23,7 @@ public:
 	int getEdad()const;
 	string getCedula()const;
 	string getFechaNac()const;
-	virtual getTipo()const;
+	virtual int getTipo()const;
 	virtual string toString()const;
 	void setNombreReal(string);
 	void setNombreUsuario(string);
@@ -32,6 +31,5 @@ public:
 	void setEdad(int);
 	void setCedula(string);
 	void setFechaNac(string);
-	
 };
 #endif
