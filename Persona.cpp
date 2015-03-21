@@ -9,13 +9,8 @@ Persona::Persona(string nombrereal,string nombreusuario,string contrasena,int ed
 :nombrereal(nombrereal), nombreusuario(nombreusuario), contrasena(contrasena), edad(edad), cedula(cedula), fechanacimiento(fechanacimiento){
 
 }
-Persona::Persona(const Persona& other)
-:nombrereal(other.nombrereal),nombreusuario(other.nombreusuario),contrasena(other.contrasena),edad(other.edad),cedula(other.cedula),
-fechanacimiento(other.fechanacimiento){
-
-}
 Persona::~Persona(){
-	delete this;
+	delete Persona;
 }
 string Persona::getNombreReal()const{
 	return nombrereal;
