@@ -1,5 +1,5 @@
 #include "Casos.h"
-#include "Secuestros.h"
+#include "Secuestro.h"
 #include <string>
 #include <iostream>
 #include <sstream>

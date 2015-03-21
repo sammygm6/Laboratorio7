@@ -4,13 +4,10 @@
 #include "Persona.h"
 
 using std::string;
-using std::streamstring;
+using std::stringstream;
 
 Evidencia::Evidencia(string,int,string,bool,bool):nombre(nombre),tipo(tipo),lugar(lugar),huella(huella),procesada(procesada){
 	
-}
-Evidencia(const Evidencia& other):nombre(other.nombre),tipo(other.tipo),lugar(other.lugar),huella(other.huella),procesada(other.procesada){
-
 }
 Evidencia::~Evidencia(){
 	delete this;

@@ -7,6 +7,7 @@ using std::string;
 
 class Persona
 {
+	int Tipo;
 	string nombrereal;
 	string nombreusuario;
 	string contrasena;
@@ -23,6 +24,7 @@ public:
 	int getEdad()const;
 	string getCedula()const;
 	string getFechaNac()const;
+	virtual getTipo()const;
 	virtual string toString()const;
 	void setNombreReal(string);
 	void setNombreUsuario(string);
