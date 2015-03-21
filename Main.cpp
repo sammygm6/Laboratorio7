@@ -25,7 +25,7 @@ int MenuAgregarPersona();
 int MenuAgregarCaso();
 int MenuAdmin();
 int MenuInvestigador();
-int MenuForense(){;
+int MenuForense();
 
 int main(int argc,char* argv[]){
 	int opcionm_principal=MenuPrincipal();//Opcion de menu principal
@@ -201,7 +201,7 @@ int main(int argc,char* argv[]){
 							int posicionelimin;
 							cout<<"Elija la posicion persona que desea eliminar: ";
 							cin>>posicionelimin;
-							while(posicionelimin<0||posicionelimin>personas.size(){
+							while(posicionelimin<0||posicionelimin>personas.size()){
 								cout<<"No existe esta posicion\nElija la posicion persona que desea eliminar: ";
 								cin>>posicionelimin;
 							}
@@ -246,7 +246,7 @@ int main(int argc,char* argv[]){
 											for (int i = 0; i < personas.size(); ++i)
 											{
 												if(personas[i]->getTipo==2){
-													cout<<personas[i].toString()<<endl;
+													cout<<personas[i]->toString()<<endl;
 													cout<<"Desea ingresar este investigador al caso?(S/N): ";
 													cin>>respcaso_inv;
 													if (respcaso_inv=='S'||respcaso_inv=='s')
@@ -258,7 +258,7 @@ int main(int argc,char* argv[]){
 											for (int i = 0; i < evidence.size(); ++i)
 											{
 												if(evidence[i]->getTipo==2){
-													cout<<evidence[i].toString()<<endl;
+													cout<<evidence[i]->toString()<<endl;
 													cout<<"Desea ingresar esta evidencia al caso?(S/N): ";
 													cin>>respcaso_evi;
 													if (respcaso_evi=='S'||respcaso_evi=='s')
@@ -324,7 +324,7 @@ int main(int argc,char* argv[]){
 					int tipo;
 					bool huella,procesada;
 					char boolhuella,boolprocesada;
-					switch(opcionm_gestionEvidencia){
+					switch(opcionm_gestionEvidencia){//switch evidencia
 						case 1:
 						{//agregar evidencia
 							cout<<"Ingrese nombre del caso: ";
@@ -375,9 +375,9 @@ int main(int argc,char* argv[]){
 							evidecias.erase(evidecias.begin()+posicionelimin-1);
 							break;
 						}//fin caso eliminar evidencia
-					}
+					}//fin switch evidencia
 					opcionm_gestionEvidencia=MenuGestionEvidencia();
-				}
+				}//fin while evidencia
 			}//Fin gestion Evidencia
 			case 4:
 			{//Case Log In
@@ -418,10 +418,9 @@ int main(int argc,char* argv[]){
 				}
 				break;
 			}//fin case Log In
-		}//finn switch Menu Principal
+		}//fin switch Menu Principal
 		int opcionm_principal=MenuPrincipal();
-	}//fin while Menu Principal
-	
+	}//fin while Menu Principal	
 	//Deletes
 	for (int i = 0; i < personas.size(); ++i)
 	{
@@ -436,7 +435,6 @@ int main(int argc,char* argv[]){
 		delete casos[i];
 	}
 	return 0;
-}
 }
 
 int Menu Principal(){
@@ -533,4 +531,3 @@ int MenuForense(){
 	}
 	return opcion;
 }
-
