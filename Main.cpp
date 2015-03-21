@@ -229,7 +229,7 @@ int main(int argc,char* argv[]){
 							int contadorInvestigador=0;	
 							for (int i = 0; i < personas.size(); ++i)
 							{
-								if(personas[i]->getTipo==2){
+								if(personas[i]->getTipo()==2){
 									contadorInvestigador++;
 								}
 							}	
@@ -245,20 +245,21 @@ int main(int argc,char* argv[]){
 											char respcaso_inv,respcaso_evi;
 											for (int i = 0; i < personas.size(); ++i)
 											{
-												if(personas[i]->getTipo==2){
+												if(personas[i]->getTipo()==2){
 													cout<<personas[i]->toString()<<endl;
 													cout<<"Desea ingresar este investigador al caso?(S/N): ";
 													cin>>respcaso_inv;
 													if (respcaso_inv=='S'||respcaso_inv=='s')
 													{
-														Investigadores.push_back(personas[i]);
+														Investigador* inv=new Investigador(const personas[i]);
+														Investigadores.push_back(inv);
 													}
 												}
 											}
 											for (int i = 0; i < evidence.size(); ++i)
 											{
-												if(evidence[i]->getTipo==2){
-													cout<<evidence[i]->toString()<<endl;
+												if(evidence[i].getTipo()==2){
+													cout<<evidence[i].toString()<<endl;
 													cout<<"Desea ingresar esta evidencia al caso?(S/N): ";
 													cin>>respcaso_evi;
 													if (respcaso_evi=='S'||respcaso_evi=='s')
@@ -273,12 +274,12 @@ int main(int argc,char* argv[]){
 											cin>>hora;
 											char respcerr=false;
 											cout<<"El caso esta cerrado o no?(S/N): ";
-											cin<<respcerr;
+											cin>>respcerr;
 											if (respcerr=='S'||respcerr=='s')
 											{
 												cerrado=true;
 											}
-											cout<<"Ingrese la lista de nombres de los"
+											cout<<"Ingrese la lista de nombres de los";
 											break;
 										}//fin agregar homicidio
 										case 2:
@@ -303,7 +304,7 @@ int main(int argc,char* argv[]){
 							int posicionelimin;
 							cout<<"Elija la posicion persona que desea eliminar: ";
 							cin>>posicionelimin;
-							while(posicionelimin<0||posicionelimin>casos.size(){
+							while(posicionelimin<0||posicionelimin>casos.size()){
 								cout<<"No existe esta posicion\nElija la posicion persona que desea eliminar: ";
 								cin>>posicionelimin;
 							}
@@ -359,7 +360,7 @@ int main(int argc,char* argv[]){
 						}//fin agregar evidencia
 						case 2:
 						{//caso eliminar evidencia
-							for (int i = 0; i < evidecias.size(); ++i)
+							for (int i = 0; i < evidencias.size(); ++i)
 							{
 								cout<<i+1<<". "<<evidencias[i]->toString()<<endl;
 							}

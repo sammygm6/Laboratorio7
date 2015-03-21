@@ -15,7 +15,7 @@ public:
 	virtual ~Evidencia();
 	string toString()const;
 	string GetNombre()const;
-	int GetTipo()const;
+	int getTipo()const;
 	string GetLugar()const;
 	bool GetHuella()const;
 	bool GetProcesada()const;

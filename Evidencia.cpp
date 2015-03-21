@@ -20,7 +20,7 @@ string Evidencia::toString()const{
 string Evidencia::GetNombre()const{
 	return nombre;
 }
-int Evidencia::GetTipo()const{
+int Evidencia::getTipo()const{
 	return tipo;
 }
 string Evidencia::GetLugar()const{
