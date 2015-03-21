@@ -12,7 +12,6 @@ class Evidencia{
 	bool huella,procesada;
 public:
 	Evidencia(string,int,string,bool,bool);
-	Evidencia(const Evidencia&);
 	virtual ~Evidencia();
 	string toString()const;
 	string GetNombre()const;

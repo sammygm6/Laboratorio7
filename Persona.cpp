@@ -40,6 +40,9 @@ string Persona::toString()const{
 	ss << "Nombre Real: " << nombrereal;
 	return ss.str();
 }
+int Persona::getTipo()const{
+	return tipo;
+}
 void Persona::setNombreReal(string nombrereal){
 	this->nombrereal = nombrereal;
 }
